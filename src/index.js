@@ -117,6 +117,23 @@ let snowingModule = (function () {
         document.body.appendChild(button);
     }
 
+    function createCanvas ()
+    {
+        var canvas = document.createElement('canvas');
+        canvas.id = 'war-on-christmas-canvas';
+        canvas.style.position = 'fixed';
+        canvas.style.top = '0px';
+        canvas.style.right = '0px';
+        canvas.style.bottom = '0px';
+        canvas.style.left = '0px';
+        canvas.style.zIndex = '-1';
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        document.body.appendChild(canvas);
+
+        return canvas;
+    }
+
     function init () {
         // Create objects
         // Create different sized snowflakes! The closer the snowflake,
@@ -129,9 +146,7 @@ let snowingModule = (function () {
         let n = 500; // total # snowflakes
         let depths = [1,2,3,4];
         let distribution = calculateDistributionsPerDepth(n, depths);
-        canvas = document.getElementById('war-on-christmas-canvas');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        canvas = createCanvas();
 
         // Don't bother loading the canvas if there is no support
         if (canvas.getContext)
