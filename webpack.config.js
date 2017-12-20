@@ -6,8 +6,14 @@ module.exports = {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
+    resolve: {
+        modules: [
+            'node_modules'
+        ]
+    },
     module: {
         rules: [
+            { test: /\.css$/, use: [ 'style-loader', 'css-loader' ] },
             {
                 test: /\.(png|svg|jpg|gif)$/,
                 use: [

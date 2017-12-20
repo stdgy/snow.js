@@ -1,5 +1,9 @@
 import { Snowflake } from "./snowflake.js";
 import SnowflakeImage from './resources/snowflake.png';
+import 'jquery/jquery.min.js';
+import 'bootstrap/dist/js/bootstrap.bundle.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
+//require('bootstrap');
 
 let snowingModule = (function () {
     let snowflakes = [];
@@ -102,6 +106,7 @@ let snowingModule = (function () {
         button.style.border = '5px solid green';
         button.style.top = '25px';
         button.style.right = '80px';
+        button.style.cursor = 'pointer';
 
         button.addEventListener('click', event => {
             if (button.innerText === "BAH HUMBUG"){
